@@ -1,3 +1,4 @@
+import { HabitsList } from "@/components/HabitList";
 import { useAuth } from "@/lib/auth-context";
 import {
   useCompleteHabit,
@@ -7,7 +8,6 @@ import {
 } from "@/lib/queries";
 import { StyleSheet, View } from "react-native";
 import { Button, Text } from "react-native-paper";
-import { HabitsList } from "../components/HabitList";
 
 export default function Index() {
   const { signOut, user } = useAuth();

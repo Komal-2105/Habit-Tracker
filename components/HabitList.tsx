@@ -1,6 +1,6 @@
 import { Habit } from "@/types/database";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { Text } from "react-native-paper";
 import { SwipeableHabit } from "./SwipeableHabit";
 
@@ -28,7 +28,10 @@ export function HabitsList({
   }
 
   return (
-    <>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={styles.container}
+    >
       {habits.map((habit) => (
         <SwipeableHabit
           key={habit.$id}
@@ -38,7 +41,7 @@ export function HabitsList({
           onComplete={onCompleteHabit}
         />
       ))}
-    </>
+    </ScrollView>
   );
 }
 
@@ -50,6 +53,9 @@ const styles = StyleSheet.create({
   },
   emptyStateText: {
     color: "#666666",
+  },
+  container: {
+    flex: 1,
   },
 });
 export default HabitsList;
